@@ -20,10 +20,10 @@ public class StoryText : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         NextText();
-    }
+    }*/
     private void NextText()
     {
         if (index <= sentences.Length - 1)

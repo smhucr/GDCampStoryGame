@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
         transform.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity, 0);
         xRotation -= Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity;
         //Camera Border
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -90f, 82f);
         Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
     }
 }
