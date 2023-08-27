@@ -33,7 +33,7 @@ public class StoryText : MonoBehaviour
         }
         else
         {
-            Function.Invoke();
+            Function?.Invoke();
         }
     }
     IEnumerator WriteSentence()
