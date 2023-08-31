@@ -6,16 +6,19 @@ using TMPro;
 public class StoryText : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
+    public GameObject panel;
     public string[] sentences;
     private int index = 0;
     public float textSpeed;
-
+    private bool isWriting = false;
     public UnityEvent Function;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isWriting)
         {
+            panel.SetActive(true);
+            isWriting = true;
             NextText();
         }
     }
@@ -34,6 +37,7 @@ public class StoryText : MonoBehaviour
         else
         {
             Function?.Invoke();
+            panel.SetActive(false);
         }
     }
     IEnumerator WriteSentence()
